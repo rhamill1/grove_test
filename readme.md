@@ -1,3 +1,6 @@
-# Project
+# Questions
 
-  display SQL and Python skills
+  What customer touchs do the different shipment_types represent?
+
+
+
