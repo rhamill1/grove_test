@@ -1,6 +1,6 @@
 ## Data Set Questions
 
--  What specific customer touchs do the different shipment_types represent?
+-  What specific customer touches do the different shipment_types represent?
 -  Does this data exist for orders instead of shipments? Shipment time includes Grove's time to process the order.
 -  Why do certain product IDs have different product SKUs? Ideally ID to SKU should be a 1-1 relationship.
 
@@ -40,7 +40,10 @@
 
 ##### Solution
 
-```solutions/avg_time_between_orders.csv```
+
+Yes there are some instances of medium to strong positive correlations.  The CSV provided is the correlation matrix.  The Excel file has some conditional formatting that makes it more visually digestible.  This part of the analysis could be further automated with more time.<br><br>
+```solutions/products_correlation_table.csv```
+```solutions/products_correlation_summary.xlsx```
 
 #### Question 4: Briefly describe the process you went through to arrive at answers 1-3 (e.g. tools used, analyses run, etc…)
 
@@ -63,5 +66,6 @@
 ```python/grove_python.py```
 
 1. Get source data from MySQL into Python Pandas DataFrame
-2. Pivot data so column 1 is a unique shipment ID and all other columns are product IDs noting the presense of that item in that order
+2. Pivot data so column 1 is a unique shipment ID and all other columns are product IDs, noting the presence of that item in that order
 3. Create a correlation table with MatPlotLib
+4. Utilize Excel conditional formatting and maximum logic to visualize medium and high correlations
