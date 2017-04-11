@@ -23,5 +23,5 @@ plot_data = plot_data.astype(float)
 
 
 correlation_table = plot_data.corr()
-correlation_table.to_csv('data/products_correlation_table.csv', sep=',', encoding='utf-8')
+correlation_table.to_csv('solutions/products_correlation_table.csv', sep=',', encoding='utf-8')
 print(correlation_table)
