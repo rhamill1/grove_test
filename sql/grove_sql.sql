@@ -125,6 +125,7 @@ ALTER TABLE grove.fact_many_orders
 
 set @row := 0;
 create table grove.fact_many_orders_id as
+
     select fmo.*, (@row := ifnull(@row, 0) + 1) as row_id
 
     from grove.fact_many_orders fmo
@@ -135,7 +136,7 @@ create table grove.fact_many_orders_id as
 
 
 
--- SOLUTION QUERY
+-- SOLUTION 1 QUERY
 select
     product_id,
     avg(time_between_ordering) as avg_time_between_orders,
@@ -154,4 +155,4 @@ from (
         and fmo.customer_id = fmob.customer_id
         and fmo.row_id - 1 = fmob.row_id) a
 
-group by product_id
+group by product_id;
